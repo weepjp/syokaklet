@@ -9,13 +9,22 @@
 
 ## Summary
 
-　「[小説家になろう](https://syosetu.com/)」及び「[カクヨム](https://kakuyomu.jp/)」の エピーソードページ内の「<b>サブタイトル(エピソードタイトル？)</b>」と「<b>本文</b>」を コピペしたい時用に使う<s>嫌らしい</s>ブックマークレットです。
+　小説サイトのエピーソードページ内の「<b>サブタイトル(エピソードタイトル？)</b>」と「<b>本文</b>」を コピペしたい時用に使う<s>嫌らしい</s>ブックマークレットです。
 
 　ダイアログにサブタイトルと、文字数と、行数（数値はざっくり）を表示させ、サブタイトルと本文をコピーするだけのもの。
 
 　面倒なので「～なろう」では、前書きと後書きも含みますが、どちらも重要な本文ですのでいいでしょう。推し先生の作品読みのお供にどうぞ。
 
  　最後に「。、。」が付きますが、これはおいらが使ってる「読み上げソフト」では、これを付けないと最後の最後で音飛びするため、聴き取れないと困るからの措置です。
+
+### Sites
+
+* 小説家になろう
+
+* カクヨム（＋近況ノート）
+
+* 他
+
 
 ### ruby tag
 
@@ -47,5 +56,5 @@
 ## JavaScript (Bookmarklet)
 
 ```js
-javascript:(()=>{let s=document.querySelector('.p-novel__title,p.widget-episodeTitle,h2.episode-title')?.innerText||"";let b=document.querySelector(%27.p-novel__body,[data-episode-text],.widget-episodeBody,[itemprop="articleBody"],#novelBody');if(!s||!b)return alert("取得不可");s=s.replace(/^[\s%E3%80%80]+/, '');let c=b.cloneNode(true);c.querySelectorAll('br').forEach(br=>br.replaceWith('\n'));c.querySelectorAll('ruby').forEach(r=>{let rt=r.querySelector('rt')?.innerText.trim()||"",rb=[...r.childNodes].filter(n=>n.nodeType===3||n.tagName==="RB").map(n=>n.textContent).join('').trim();let showRuby=/[ぁ-んァ-ヶ一-龥々ーa-zA-Z0-9]/.test(rt);r.replaceWith(showRuby?%60【【${rt}】】${rb}%60:rb)});let f=c.innerText.replace(/^[ \t\r\n]+/, '').replace(/^%E3%80%80{2,}/, '%E3%80%80');let text=s+'\n\n'+f+'\n。、。\n\n\n',lines=text.split('\n').filter(l=>l.trim()).length,chars=text.length;navigator.clipboard.writeText(text).then(()=>alert(%60コピー完了: ${s}\n文字数: ${chars}\n行数: ${lines}%60)).catch(e=>alert("コピー失敗: "+e))})();
+javascript:(()=>{let s=document.querySelector('.p-novel__title,p.widget-episodeTitle,h2.episode-title,h2[class*="Heading_size-1l"]')?.innerText||"";let b=document.querySelector('.p-novel__body,[data-episode-text],.widget-episodeBody,[itemprop="articleBody"],#novelBody,.Gap_size-m__thYv4 .Gap_size-m__thYv4>div');if(!s||!b)return alert("取得不可");s=s.replace(/^[\s\u3000]+/, '');let c=b.cloneNode(true);c.querySelectorAll('br').forEach(br=>br.replaceWith('\n'));c.querySelectorAll('ruby').forEach(r=>{let rt=r.querySelector('rt')?.innerText.trim()||"",rb=[...r.childNodes].filter(n=>n.nodeType===3||n.tagName==="RB").map(n=>n.textContent).join('').trim();r.replaceWith(rt?`【【${rb}】】${rt}`:rb)});let f=c.innerText.replace(/^[ \t\r\n]+/, '').replace(/^\u3000{2,}/gm, '　');let text=s+'\n\n'+f+'\n。、。\n\n\n',lines=text.split('\n').filter(l=>l.trim()).length,chars=text.length;navigator.clipboard.writeText(text).then(()=>alert(`コピー完了: ${s}\n文字数: ${chars}\n行数: ${lines}`)).catch(e=>alert("コピー失敗: "+e))})();
 ```
