@@ -74,3 +74,5 @@ javascript:((d=document)=>{let q=n=>d.querySelector(n),s=q('.p-novel__title,p.wi
 コマンドは　ボイス名＞　で、VOICEROID² デフォルト準拠。
 
 地の文は音街ウナ、「～」は音街ウナ - 新規、『～』は琴葉葵、エピソードタイトルと他は琴葉茜（雑）の配役です。
+
+ルビは読みしか入れてませんが、傍点や記号の場合は親文字優先です。
