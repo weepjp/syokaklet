@@ -1,6 +1,10 @@
 # 。、。( #syokaklet )
 
-<img width="442" height="185" alt="image" src="https://github.com/user-attachments/assets/7a394434-79f1-4755-b915-59c8f61fae49" border="1"/>
+
+| <img width="442" height="185" alt="image" src="https://github.com/user-attachments/assets/7a394434-79f1-4755-b915-59c8f61fae49" /> | 
+| :---: | 
+| 「。、。」使用時の結果ダイアログ。 |
+
 
 ----
 
@@ -106,7 +110,9 @@
 * ブックマークレットは、URL に JavaScript 入れて、それをブックマーク保存して、使いたい時にブックマークレットを開くと現在閲覧中のページを取得したりなどの簡単な拡張機能が使えます。
   * ググったほうがもっと良い結果が得られるよ！ [ブックマークレットとは \- Google 検索](https://www.google.com/search?q=%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88%E3%81%A8%E3%81%AF)
 
-<img width="439" height="539" alt="image" src="https://github.com/user-attachments/assets/9f0aa01c-1e1c-49b6-8838-24952a07d029"  border="1" />
+| <img width="439" height="539" alt="image" src="https://github.com/user-attachments/assets/9f0aa01c-1e1c-49b6-8838-24952a07d029" > | 
+| :---: | 
+| ブックマークレットはブラウザブックマークに追加して使用できます。 |
 
 ## ブックマークレットの追加の仕方は？
 
@@ -116,12 +122,16 @@
 4. 1 も 2 も、分からなかったら、「検索サイト」とか「AIチャット」とか使って教わってね。
 5. スマホの場合は、もっと難易度高いから「検索サイト」とか「AIチャット」とか使って教わってね（丸投げ）。
 
-<img width="320" height="174" alt="image" src="https://github.com/user-attachments/assets/93d89724-b42a-4510-9e4d-58200b4e4318" border="1" />
+| <img width="320" height="174" alt="image" src="https://github.com/user-attachments/assets/93d89724-b42a-4510-9e4d-58200b4e4318" />| 
+| :---: | 
+| このようにブックマークレットのコードを簡単にコピーできます。 |
 
 * 画像にあるように、ブックマークレット用 JavaScript 欄の右側にある「四角が2個あるアイコン」クリックで、選択しなくてもコピーしてくれるよ。
 * これを 2 で言うところの URL に貼り付ければ簡単です。
 
-<img width="439" height="178" alt="image" src="https://github.com/user-attachments/assets/da6eb2b3-d22c-4934-8e1c-510cfbe33d0b"  border="1" />
+| <img width="439" height="178" alt="image" src="https://github.com/user-attachments/assets/da6eb2b3-d22c-4934-8e1c-510cfbe33d0b"  border="1" />| 
+| :---: | 
+| 使用したら出るダイアログ。 |
 
 * エピソードページで、ブックマークレットを開くと、上の画像のようなダイアログが出ます。
 * <s>俺ってなんてやさしいんだろう？</s> こんなの作るやつはきっと作家側にとってやさしくなどない！
