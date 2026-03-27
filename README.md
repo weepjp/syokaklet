@@ -106,7 +106,7 @@
 | このようにブックマークレットのコードを簡単にコピーできます。 |
 
 * 画像にあるように、ブックマークレット用 JavaScript 欄の右側にある「四角が2個あるアイコン」クリックで、選択しなくてもコピーしてくれるよ。
-* これを 2 で言うところの URL に貼り付ければ簡単です。
+* これを URL に貼り付ければ簡単です。
 
 | <img width="439" height="178" alt="image" src="https://github.com/user-attachments/assets/da6eb2b3-d22c-4934-8e1c-510cfbe33d0b"  border="1" />| 
 | :---: | 
