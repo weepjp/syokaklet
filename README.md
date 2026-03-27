@@ -150,7 +150,7 @@ javascript:/* 。、。V1 */((d=document)=>{let q=n=>d.querySelector(n),s=q('.p-
 ### V2 ブックマークレット
 
 ```js
-javascript:/* 。、。V2 */((d=document)=>{let q=n=>d.querySelector(n),s=q('.p-novel__title,p.widget-episodeTitle,h2.episode-title,h2.Heading_heading__lQ85n,h1.p-news-entry__title,.al-title')?.innerText.trim()||"",b=q('.js-novel-text:not(.p-novel__text--afterword),.p-novel__body,[data-episode-text],.widget-episodeBody,[itemprop="articleBody"],#novelBody,.Gap_size-m__thYv4>div:not(:has(div[class])),.p-news-entry__body,#novel-body');if(!b)return alert("取得不可");let L=b.innerText.replace(/\s/g,'').length,Y=b.innerText.split('\n').length,p=b.cloneNode(!0);p.querySelectorAll('.p-novel__text--afterword,#novel_a').forEach(e=>e.remove());let a=d.querySelector('#novel_a,.p-novel__text--afterword');if(a)p.appendChild(a.cloneNode(!0));p.querySelectorAll('ruby').forEach(r=>{let t=r.querySelector('rt'),m=r.childNodes[0]?.textContent||"";if(t){let y=t.innerText.replace(/[^a-zA-Zぁ-んァ-ヶ一-龥々ー]/g,'');r.replaceWith(y||m)}else{r.replaceWith(r.innerText)}});let D='‒–—―⸺─━…⋯‥',va='音街ウナ',vb='音街ウナ - 新規',vx='琴葉 茜',vy='琴葉 葵',N='\n\n\n\n',T=(r,t)=>new RegExp(r).test(t),i=[...p.childNodes].map(n=>n.nodeType===3?n.textContent:n.innerText).join('\n').split('\n'),res=[],vC="INIT",f=-1,isL=0,r=/お読み[い頂]|読んで[く下]|電書|電子書籍|紙の本|ノベル|コミカライズ|書き下ろし|配信|予約受|書影|書誌|読者|[前後][編篇]|『面白|『おもしろ|『続き|評価|ブックマーク|次回更新|最新話|執筆|誤字|脱字|他作|番外|裏設定|☆☆☆|★★★|http/;let isN=b.classList.contains('p-news-entry__body');if(!isN){let totalTxt=i.join(''),limitLen=Math.max(64,Math.floor(totalTxt.length*0.2)),currentLen=0;for(let n=i.length-1;n>=0;n--){currentLen+=i[n].length;if(i[n].trim()!==""&&r.test(i[n])){f=n}if(currentLen>limitLen)break}}if(f!==-1)i=i.slice(0,f);while(i.length>0&&!i[0].trim()){i.shift()}if(s){res.push(vx+"＞\n"+s);vC="TITLE_END"}i.forEach(l=>{if(isN){res.push(l);return}if(!l.trim()){return}let v=vC;if(isL<=0){if(T('^([「｢『『（(【［«《〈〔〖〚])\\1',l)){v=vx}else if(T('^[「｢]',l)){v=vb}else if(T(`^([${D}！-／：-＠])\\1|^[『【＜${D}]`,l)){v=vy}else if(T('^[（(※＊《«〈〔〖〚]',l)){v=vx}else{v=va}}let t=l.replace(/＜/g,'『').replace(/＞/g,'』');if(vC!==v||vC==="TITLE_END"){res.push(v+"＞"+N+t)}else{res.push(t)}vC=v;let op=(l.match(/[「｢『（(【［«《〈〔〖〚]/g)||[]).length,cl=(l.match(/[」｣』）)】］»》〉〕〗〛]/g)||[]).length;isL+=op-cl});let R=res.join('\n')+'\n\n。、。\n\n\n',z=R.split('\n').length;navigator.clipboard.writeText(R).then(()=>alert(`完了: ${s}\n原文: ${L}(${Y})\n結果: ${R.length}(${z})${f!==-1?'\n※カット有':''}`)).catch(e=>alert(e))})()
+javascript:/* 。、。V2_fixed */((d=document)=>{let q=n=>d.querySelector(n),s=q('.p-novel__title,p.widget-episodeTitle,h2.episode-title,h2.Heading_heading__lQ85n,h1.p-news-entry__title,.al-title')?.innerText.trim()||"",b=q('.js-novel-text:not(.p-novel__text--afterword),.p-novel__body,[data-episode-text],.widget-episodeBody,[itemprop="articleBody"],#novelBody,.Gap_size-m__thYv4>div:not(:has(div[class])),.p-news-entry__body,#novel-body');if(!b)return alert("取得不可");let L=b.innerText.replace(/\s/g,'').length,Y=b.innerText.split('\n').length,p=b.cloneNode(!0);p.querySelectorAll('.p-novel__text--afterword,#novel_a').forEach(e=>e.remove());let a=d.querySelector('#novel_a,.p-novel__text--afterword');if(a)p.appendChild(a.cloneNode(!0));p.querySelectorAll('ruby').forEach(r=>{let t=r.querySelector('rt'),m=r.childNodes[0]?.textContent||"";if(t){let y=t.innerText.replace(/[^a-zA-Zぁ-んァ-ヶ一-龥々ー]/g,'');r.replaceWith(y||m)}else{r.replaceWith(r.innerText)}});let D='‒–—―⸺─━…⋯‥',va='音街ウナ',vb='音街ウナ - 新規',vx='琴葉 茜',vy='琴葉 葵',N='\n\n\n\n',T=(r,t)=>new RegExp(r).test(t),i=[...p.childNodes].map(n=>n.nodeType===3?n.textContent:n.innerText).join('\n').split('\n'),res=[],vC="INIT",f=-1,isL=0,r=/お読み[い頂]|読んで[く下]|電書|電子書籍|紙の本|ノベル|コミカライズ|書き下ろし|配信|予約受|書影|書誌|読者|[前後][編篇]|『面白|『おもしろ|『続き|評価|ブックマーク|次回更新|最新話|執筆|誤字|脱字|他作|番外|裏設定|☆☆☆|★★★|http/;let isN=b.classList.contains('p-news-entry__body');if(!isN){let totalTxt=i.join(''),limitLen=Math.max(64,Math.floor(totalTxt.length*0.2)),currentLen=0;for(let n=i.length-1;n>=0;n--){currentLen+=i[n].length;if(i[n].trim()!==""&&r.test(i[n])){f=n}if(currentLen>limitLen)break}}if(f!==-1)i=i.slice(0,f);while(i.length>0&&!i[0].trim()){i.shift()}if(s){res.push(vx+"＞\n"+s);vC="TITLE_END"}i.forEach(l=>{if(isN){res.push(l);return}if(!l.trim()){return}let v=vC;if(isL<=0){if(T('^[　 ]*([「｢『『（(【［«《〈〔〖〗])\\1',l)){v=vx}else if(T('^[　 ]*[「｢]',l)){v=vb}else if(T(`^[　 ]*([${D}！-／：-＠※＊（(《〈〔〖〗])\\1`,l)){v=vy}else if(T(`^[　 ]*[${D}！-／：-＠※＊（(《〈〔〖〗]`,l)){v=vx}else{v=va}}let t=l.replace(/＜/g,'『').replace(/＞/g,'』');if(vC!==v||vC==="TITLE_END"){res.push(v+"＞"+N+t)}else{res.push(t)}vC=v;let op=(l.match(/[「｢『（(【［«《〈〔〖〗]/g)||[]).length,cl=(l.match(/[」｣』）)】］»》〉〕〗〗]/g)||[]).length;isL+=op-cl});let R=res.join('\n')+'\n\n。、。\n\n\n',z=R.split('\n').length;navigator.clipboard.writeText(R).then(()=>alert(`完了: ${s}\n原文: ${L}(${Y})\n結果: ${R.length}(${z})${f!==-1?'\n※カット有':''}`)).catch(e=>alert(e))})()
 ```
 
 ### V2 について
@@ -170,16 +170,23 @@ javascript:/* 。、。V2 */((d=document)=>{let q=n=>d.querySelector(n),s=q('.p-
 
 ## V2 のボイス名コマンドについて
 
+* （行冒頭の字下げスペースを無視し）特定の記号から開始の判定があると、ボイスを変更します。
+
+| 特定の記号     | 該当記号                         
+| ------------- | --------------------------------------------- | 
+| 括弧           | `（` `(` `《` `〈` `〔` `〖` `〖` |
+| 注目記号       | `※` `＊` `！` `？` |
+| 傍線・リーダー  | `‒` `–` `—` `―` `⸺` `─` `━` `…` `⋯` `‥` |
+
 * 配役はてきとーすぎて参考にならないです（俺得なんで）。
 * 変数の値を変えれば、お好みに変更できます。
 
-| 設定したボイス名コマンド  | 変数  | 役割                                                                                                                                           | 
-| ----------------- | :---: | ---------------------------------------------------------------------------------------------------------------------------------------------- | 
-| 音街ウナ＞        | va | 地の文。いわゆるナレーション的な。                                                                                                           | 
-| 音街ウナ - 新規＞ | vb | `「」`内の台詞。                                                                                                                               | 
-| 琴葉 茜＞         | vx | エピソードタイトル。<br>`「「 ` `（（` `《《` などの二重括弧。<br>`（` `※` `＊` `《` `〈` `〔` `〖` `〚` から始まる行。                       | 
-| 琴葉 葵＞         | vy | `『』`内の台詞。<br>`―` `─` などの傍線、`…` `⋯` `‥`などの点リーダーなどから始まる行。<br>`！！` `？？` などの二重記号から始まる特殊な行。 | 
-
+| ボイス名(値)    | 変数  | 役割  | 
+| -------------- | :---: | ---------------------------------------------------------------------------------------------------------------------------------------------- | 
+| 音街ウナ        | va | 地の文。いわゆるナレーション的な。 | 
+| 音街ウナ - 新規 | vb | `「」`内の台詞。<br>（途中に改行が含まれていても閉じられるまで）<br>（行冒頭字下げスペースは無視） | 
+| 琴葉 茜         | vx | エピソードタイトル。<br>括特定の記号の連続から開始される行。<br>（行冒頭字下げスペースは無視） | 
+| 琴葉 葵         | vy | 特定の記号1文字から開始される行。<br>（行冒頭字下げスペースは無視） | 
 
 ----
 
