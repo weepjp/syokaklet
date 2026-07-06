@@ -147,7 +147,7 @@ javascript:/* 。、。V1 */((d=document)=>%7Blet q=n=>d.querySelector(n),s=q('.
 ### V2 ブックマークレット
 
 ```js
-javascript:/* 。、。V2 */((d=document)=>%7Blet q=n=>d.querySelector(n),s=q('.p-novel__title,p.widget-episodeTitle,h2.episode-title,h2.Heading_heading__lQ85n,h1.p-news-entry__title,.al-title')?.innerText.trim()||"",b=q(%27.js-novel-text:not(.p-novel__text--afterword),.p-novel__body,[data-episode-text],.widget-episodeBody,[itemprop="articleBody"],#novelBody,.Gap_size-m__thYv4>div:not(:has(div[class])),.p-news-entry__body,#novel-body');if(!b)return alert("取得不可");s=s.replace(/刺繡/g,'ししゅう').replace(/咖喱/g,'カリー').replace(/蹂躙/g,'じゅうりん').replace(/頰/g,'頬').replace(/噓/g,'嘘').replace(/繫/g,'繋').replace(/剝/g,'剥').replace(/塡/g,'填').replace(/𠮟/g,'叱').replace(/醬/g,'醤').replace(/咒/g,'呪').replace(/嚙/g,'噛').replace(/摑/g,'掴').replace(/艷/g,'艶').replace(/瘦/g,'痩').replace(/禱/g,'祷').replace(/瀆/g,'涜').replace(/顚/g,'顛').replace(/昻/g,'昂').replace(/內/g,'内');let L=b.innerText.replace(/\s/g,'').length,Y=b.innerText.split('\n').length,p=b.cloneNode(!0);p.querySelectorAll('.p-novel__text--afterword,#novel_a').forEach(e=>e.remove());let a=d.querySelector('#novel_a,.p-novel__text--afterword');if(a)p.appendChild(a.cloneNode(!0));p.querySelectorAll('ruby').forEach(r=>{let t=r.querySelector('rt');if(t)%7Br.innerText=t.innerText.trim()%7D});let D='‒–—―⸺─━…⋯‥',va='音街ウナ',vb='音街ウナ - 新規',vx='琴葉 茜',vy='琴葉 葵',N='\n\n\n\n',T=(r,t)=>new RegExp(r).test(t),i=[...p.childNodes].map(n=>n.nodeType===3?n.textContent:n.innerText).join('\n').split('\n'),res=[],vC="INIT",f=-1,isL=0,r=/お読み[い頂戴]|読んでく(ださ|れて)|(おもしろ|面白)かったり|(続|つづ)きが読みたい|[筆著作]者(からの|から)お(願|ねが|知ら|しら)|コミカライズ|書き[下お]ろし|予約[開受]|発売[さしでを日記中開決！]|書影|読者様|[前中後][編篇]|[0-9０-９〇一二三四五六七八九十百千万上中下\u2160-\u216B\u2170-\u217B]+[巻章]|[第全][0-9０-９〇一二三四五六七八九十百千万\u2160-\u216B\u2170-\u217B]+[eエ話回]|『(面白かった|おもしろかった|続きが)|[★☆]を(いただ|戴|頂)けたら|宣伝(です|さ|を[さ行いく])|^[\u3000 ]*[※＊●★☆■◆◇▲▽▼(]+宣伝|(なろう|カクヨム)の(システム|機能|仕様)|ブックマーク|ブクマ|お気に[入い]|次回更新|最[新終]話|[誤脱]字|他作|番外|[閑間]話|裏設定|ポイント[とや]感想|(続|つづ)きを書き|☆☆☆|★★★|http/;let isN=b.classList.contains('p-news-entry__body');if(!isN)%7Blet totalTxt=i.join(''),limitLen=Math.max(32,Math.floor(totalTxt.length*0.2)),currentLen=0;for(let n=i.length-1;n>=0;n--)%7BcurrentLen+=i[n].length;if(i[n].trim()!==""&&r.test(i[n]))%7Bf=n%7Dif(currentLen>limitLen)break%7D%7Dif(f!==-1)i=i.slice(0,f);while(i.length>0&&!i[0].trim())%7Bi.shift()%7Dif(s)%7Bres.push(vx+"＞\n"+s);vC="TITLE_END"%7Di.forEach(l=>{if(isN)%7Bres.push(l);return%7Dif(!l.trim())%7Breturn%7Dlet v=vC;if(isL<=0)%7Bif(T('^[\\u3000 ]*[『]',l))%7Bv=vy%7Delse if(T('^[\\u3000 ]*[「｢]',l))%7Bv=vb%7Delse if(T(%60^[\\u3000 ]*([${D}！-／：-＠※＊（(《〈〔〖〗])\\1%60,l))%7Bv=vy%7Delse if(T(%60^[\\u3000 ]*[${D}！-／：-＠※＊（(《〈〔〖〗]%60,l))%7Bv=vx%7Delse%7Bv=va%7D%7Dlet t=l.replace(/＜/g,'『').replace(/＞/g,'』').replace(/刺繡/g,'ししゅう').replace(/咖喱/g,'カリー').replace(/蹂躙/g,'じゅうりん').replace(/頰/g,'頬').replace(/噓/g,'嘘').replace(/繫/g,'繋').replace(/剝/g,'剥').replace(/塡/g,'填').replace(/𠮟/g,'叱').replace(/醬/g,'醤').replace(/咒/g,'呪').replace(/嚙/g,'噛').replace(/摑/g,'掴').replace(/艷/g,'艶').replace(/瘦/g,'痩').replace(/禱/g,'祷').replace(/瀆/g,'涜').replace(/顚/g,'顛').replace(/昻/g,'昂').replace(/內/g,'内');if(vC!==v||vC==="TITLE_END")%7Bres.push(v+"＞"+N+t)%7Delse%7Bres.push(t)%7DvC=v;let op=(l.match(/[「｢『（(【［«《〈〔〖〗]/g)||[]).length,cl=(l.match(/[」 someplace ｣』）)】］»韻》〉〕〖〗]/g)||[]).length;isL+=op-cl});let R=res.join('\n')+'\n\n。、。\n\n\n',z=R.split('\n').length;navigator.clipboard.writeText(R).then(()=>alert(%60。、。V2\n完了: ${s}\n原文: ${L}(${Y})\n結果: ${R.length}(${z})${f!==-1?'\n※カット有':''}%60)).catch(e=>alert(e))})()
+javascript:/* 。、。V2 */((d=document)=>%7Blet q=n=>d.querySelector(n),s=q('.p-novel__title,p.widget-episodeTitle,h2.episode-title,h2.Heading_heading__lQ85n,h1.p-news-entry__title,.al-title')?.innerText.trim()||"",b=q(%27.js-novel-text:not(.p-novel__text--afterword),.p-novel__body,[data-episode-text],.widget-episodeBody,[itemprop="articleBody"],#novelBody,.Gap_size-m__thYv4>div:not(:has(div[class])),.p-news-entry__body,#novel-body');if(!b)return alert("取得不可");let X=t=>t.replace(/咖喱/g,'カリー').replace(/蹂躙/g,'じゅうりん').replace(/繡/g,'繍').replace(/頰/g,'頬').replace(/噓/g,'嘘').replace(/繫/g,'繋').replace(/剝/g,'剥').replace(/塡/g,'填').replace(/𠮟/g,'叱').replace(/醬/g,'醤').replace(/咒/g,'呪').replace(/嚙/g,'噛').replace(/摑/g,'掴').replace(/艷/g,'艶').replace(/瘦/g,'痩').replace(/禱/g,'祷').replace(/瀆/g,'涜').replace(/顚/g,'顛').replace(/昻/g,'昂').replace(/內/g,'内');s=X(s);let L=b.innerText.replace(/\s/g,'').length,Y=b.innerText.split('\n').length,p=b.cloneNode(!0);p.querySelectorAll('.p-novel__text--afterword,#novel_a').forEach(e=>e.remove());let a=d.querySelector('#novel_a,.p-novel__text--afterword');if(a)p.appendChild(a.cloneNode(!0));p.querySelectorAll('ruby').forEach(r=>{let t=r.querySelector('rt');if(t)%7Br.innerText=t.innerText.trim()%7D});let D='‒–—―⸺─━…⋯‥',va='音街ウナ',vb='音街ウナ - 新規',vx='琴葉 茜',vy='琴葉 葵',N='\n\n\n\n',T=(r,t)=>new RegExp(r).test(t),i=[...p.childNodes].map(n=>n.nodeType===3?n.textContent:n.innerText).join('\n').split('\n'),res=[],vC="INIT",f=-1,isL=0,r=/お読み[い頂戴]|読んでく(ださ|れて)|(おもしろ|面白)かったり|(続|つづ)きが読みたい|[筆著作]者(からの|から)お(願|ねが|知ら|しら)|コミカライズ|書き[下お]ろし|予約[開受]|発売[さしでを日記中開決！]|書影|読者様|[前中後][編篇]|[0-9０-９〇一二三四五六七八九十百千万上中下\u2160-\u216B\u2170-\u217B]+[巻章]|[第全][0-9０-９〇一二三四五六七八九十百千万\u2160-\u216B\u2170-\u217B]+[eエ話回]|『(面白かった|おもしろかった|続きが)|[★☆]を(いただ|戴|頂)けたら|宣伝(です|さ|を[さ行いく])|^[\u3000 ]*[※＊●★☆■◆◇▲▽▼(]+宣伝|(なろう|カクヨム)の(システム|機能|仕様)|ブックマーク|ブクマ|お気に[入い]|次回更新|最[新終]話|[誤脱]字|他作|番外|[閑間]話|裏設定|ポイント[とや]感想|(続|つづ)きを書き|☆☆☆|★★★|http/;let isN=b.classList.contains('p-news-entry__body');if(!isN)%7Blet totalTxt=i.join(''),limitLen=Math.max(32,Math.floor(totalTxt.length*0.2)),currentLen=0;for(let n=i.length-1;n>=0;n--)%7BcurrentLen+=i[n].length;if(i[n].trim()!==""&&r.test(i[n]))%7Bf=n%7Dif(currentLen>limitLen)break%7D%7Dif(f!==-1)i=i.slice(0,f);while(i.length>0&&!i[0].trim())%7Bi.shift()%7Dif(s)%7Bres.push(vx+"＞\n"+s);vC="TITLE_END"%7Di.forEach(l=>{if(isN)%7Bres.push(l);return%7Dif(!l.trim())%7Breturn%7Dlet v=vC;if(isL<=0)%7Bif(T('^[\\u3000 ]*[『]',l))%7Bv=vy%7Delse if(T('^[\\u3000 ]*[「｢]',l))%7Bv=vb%7Delse if(T(%60^[\\u3000 ]*([${D}！-／：-＠※＊（(《〈〔〖〗])\\1%60,l))%7Bv=vy%7Delse if(T(%60^[\\u3000 ]*[${D}！-／：-＠※＊（(《〈〔〖〗]%60,l))%7Bv=vx%7Delse%7Bv=va%7D%7Dlet t=X(l).replace(/＜/g,'『').replace(/＞/g,'』');if(vC!==v||vC==="TITLE_END")%7Bres.push(v+"＞"+N+t)%7Delse%7Bres.push(t)%7DvC=v;let op=(l.match(/[「｢『（(【［«《〈〔〖〗]/g)||[]).length,cl=(l.match(/[」｣』）)】］»»》〉〕〖〗]/g)||[]).length;isL+=op-cl});let R=res.join('\n')+'\n\n。、。\n\n\n',z=R.split('\n').length;navigator.clipboard.writeText(R).then(()=>alert(%60。、。V2\n完了: ${s}\n原文: ${L}(${Y})\n結果: ${R.length}(z)${f!==-1?'\n※カット有':''}%60)).catch(e=>alert(e))})()
 ```
 
 ### V2 について
@@ -159,12 +159,12 @@ javascript:/* 。、。V2 */((d=document)=>%7Blet q=n=>d.querySelector(n),s=q('.
 　ルビは上の子文字のみを読み上げますが、傍点を含む記号が上の小文字にくる場合は下の親文字のみを読みます。
 
 * 個人的に VOICEROID2 用に使ってるやつです。
-* 〓 で 読み設定できない字の対策。
+* 〓対策。
 * 文の先頭文字（括弧か傍線か記号かそれ以外か）を判定して、音街ウナ(と - 新規)と琴葉葵と琴葉茜で割り振ってる。
 * コマンドは　ボイス名＞　で、VOICEROID² デフォルト準拠。
 * ダイアログには原文と結果の両数値が出ます（正確さはわかりません）。
 
-## 〓 で 読み設定できない字の対策
+### 〓対策（漢字が 〓 になって、読み設定できない字の対策）
 
 * VOICEROID2 は、<s>時代錯誤のアプリ</s> Shift_JIS 環境なので、Unicode固有のJIS第3・第4水準の異体字は、読み設定に対応しないので対策。
 * Shift_JIS に漢字が存在すれば、それに置換させる。
@@ -172,9 +172,9 @@ javascript:/* 。、。V2 */((d=document)=>%7Blet q=n=>d.querySelector(n),s=q('.
 
 | 該当漢字 | 置換後 |
 | --------- | ---- |
-| 刺繡 | ししゅう |
-| 蹂躙 | じゅうりん |
 | 咖喱 | カリー |
+| 蹂躙 | じゅうりん |
+| 繡 | 繍 |
 | 頰 | 頬 |
 | 噓 | 嘘 |
 | 繫 | 繋 |
@@ -194,7 +194,7 @@ javascript:/* 。、。V2 */((d=document)=>%7Blet q=n=>d.querySelector(n),s=q('.
 | 內 | 内 |
 
 
-## V2 のボイス名コマンドについて
+### V2 のボイス名コマンドについて
 
 * （行冒頭の字下げスペースを無視し）特定の記号から開始の判定があると、ボイスを変更します。
 * 括弧の途中に改行が含まれていても閉じられるまでボイス変更しない振る舞いをします。
