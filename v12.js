@@ -108,8 +108,10 @@
       i.forEach(l => {
         if (isN) { res.push(l); return; }
         if (!l.trim()) return;
-        let lt = l.trim(), v = vC;
-        let op = (l.match(/[「｢『（(【［«《〈〔〖]/g) || []).length, cl = (l.match(/[」｣』）)】］»》〉〕〖]/g) || []).length;
+        
+        let t = X(l); 
+        let lt = t.trim(), v = vC;
+        let op = (t.match(/[「｢『（(【［«《〈〔〖]/g) || []).length, cl = (t.match(/[」｣』）)】］»》〉〕〖]/g) || []).length;
         let isEndClose = /[」｣』）)】］»》〉〕〖]$/.test(lt);
 
         if (isL === 0) {
@@ -134,7 +136,6 @@
           }
         }
 
-        let t = X(l);
         if (vC !== v || vC === "TITLE_END") res.push(v + "＞" + N + t);
         else res.push(t);
 
