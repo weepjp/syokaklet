@@ -34,7 +34,16 @@
     }
 
     let s = q('.p-novel__title,p.widget-episodeTitle,h2.episode-title,h2.Heading_heading__lQ85n,h1.p-news-entry__title,.al-title')?.innerText.trim() || "";
-    let X = t => t.replace(/咖喱/g,'カリー').replace(/蹂躙/g,'じゅうりん').replace(/繡/g,'繍').replace(/頰/g,'頬').replace(/噓/g,'嘘').replace(/繫/g,'繋').replace(/剝/g,'剥').replace(/塡/g,'填').replace(/𠮟/g,'叱').replace(/醬/g,'醤').replace(/咒/g,'呪').replace(/嚙/g,'噛').replace(/摑/g,'掴').replace(/艷/g,'艶').replace(/瘦/g,'痩').replace(/禱/g,'祷').replace(/瀆/g,'涜').replace(/顚/g,'顛').replace(/昻/g,'昂').replace(/內/g,'内').replace(/＜/g,'『').replace(/＞/g,'』');
+    
+    let X = t => t
+      .replace(/咖喱/g,'カリー').replace(/蹂躙/g,'じゅうりん').replace(/繡/g,'繍').replace(/頰/g,'頬').replace(/噓/g,'嘘').replace(/繫/g,'繋').replace(/剝/g,'剥').replace(/塡/g,'填').replace(/𠮟/g,'叱').replace(/醬/g,'醤').replace(/咒/g,'呪').replace(/嚙/g,'噛').replace(/摑/g,'掴').replace(/艷/g,'艶').replace(/瘦/g,'痩').replace(/禱/g,'祷').replace(/瀆/g,'涜').replace(/顚/g,'顛').replace(/昻/g,'昂').replace(/內/g,'内')
+      .replace(/＜/g,'『').replace(/＞/g,'』')
+      .replace(/cm³/gi,'立方センチメートル').replace(/cm²/gi,'平方センチメートル').replace(/km²/gi,'平方キロメートル').replace(/m³/gi,'立方メートル').replace(/m²/gi,'平方メートル')
+      .replace(/㎥/g,'立方メートル').replace(/㎡/g,'平方メートル').replace(/㎤/g,'立方センチメートル').replace(/㎠/g,'平方センチメートル').replace(/㎢/g,'平方キロメートル')
+      .replace(/㎝/g,'センチメートル').replace(/㎜/g,'ミリメートル').replace(/㎞/g,'キロメートル').replace(/㎏/g,'キログラム').replace(/㎎/g,'ミリグラム').replace(/㏄/g,'シーシー')
+      .replace(/㎖/g,'ミリリットル').replace(/㎗/g,'デシリットル').replace(/ℓ/g,'リットル')
+      .replace(/³/g,'の3乗').replace(/²/g,'の2乗');
+
     let L = b.innerText.replace(/\s/g,'').length, Y = b.innerText.split('\n').length;
 
     let p = b.cloneNode(true);
